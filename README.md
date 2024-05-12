@@ -22,8 +22,11 @@ python main.py
 
 ## Contributors
 Enric Canudas 1631674@uab.cat
+
 Lluc Vicente 1631658@uab.cat
+
 Ramón Álvaro 1635833@uab.cat
+
 Bruno León 1633333@uab.cat
 
 Xarxes Neuronals i Aprenentatge Profund
