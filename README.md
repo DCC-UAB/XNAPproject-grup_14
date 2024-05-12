@@ -21,8 +21,11 @@ python main.py
 
 
 ## Contributors
-Write here the name and UAB mail of the group members
+Enric Canudas 1631674@uab.cat
+Lluc Vicente 1631658@uab.cat
+Ramón Álvaro 1635833@uab.cat
+Bruno León 1633333@uab.cat
 
 Xarxes Neuronals i Aprenentatge Profund
-Grau de __Write here the name of your estudies (Artificial Intelligence, Data Engineering or Computational Mathematics & Data analyitics)__, 
-UAB, 2023
+Grau de Enginyeria de Dades
+UAB, 2024
