@@ -6,6 +6,7 @@ from keras.models import load_model
 from keras.callbacks import TensorBoard
 import numpy as np
 import _pickle as pickle
+import tensorflow as tf
 
 batch_size = 128  # Batch size for training.
 epochs = 20  # Number of epochs to train for.
