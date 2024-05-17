@@ -24,6 +24,14 @@ def prepareData(data_path):
     
     return encoder_input_data, decoder_input_data, decoder_target_data, input_token_index, target_token_index,input_texts,target_texts,num_encoder_tokens,num_decoder_tokens,num_decoder_tokens,max_encoder_seq_length
 
+def create_data_loader(encoder_input_data, decoder_input_data, decoder_target_data):
+    encoder_dataset = tf.data.Dataset.from_tensor_slices(encoder_input_data)
+    decoder_input_dataset = tf.data.Dataset.from_tensor_slices(decoder_input_data)
+    decoder_target_dataset = tf.data.Dataset.from_tensor_slices(decoder_target_data)
+        
+    return encoder_dataset, decoder_input_dataset, decoder_target_dataset 
+
+
 def extractChar(data_path,exchangeLanguage=False):
     # We extract the data (Sentence1 \t Sentence 2) from the anki text file
     input_texts = []
