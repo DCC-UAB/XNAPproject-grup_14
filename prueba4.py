@@ -462,9 +462,7 @@ evaluateRandomly(encoder1, attn_decoder1)
 
 output_words, attentions = evaluate(
     encoder1, attn_decoder1, "mir geht es gut .")
-#plt.matshow(attentions.numpy())
-torch.save(encoder1.state_dict(), 'encoder1.params.pkl')
-torch.save(attn_decoder1.state_dict(), 'attn_decoder1.params.pkl')
+#plt.matshow(attentions.numpy()
 
 
 
