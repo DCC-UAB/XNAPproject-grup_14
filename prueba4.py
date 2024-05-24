@@ -306,7 +306,7 @@ def train(input_variable, target_variable, encoder, decoder, encoder_optimizer, 
     encoder_optimizer.step()
     decoder_optimizer.step()
 
-     wandb.log({"loss": loss.item() / target_length})
+    wandb.log({"loss": loss.item() / target_length})
 
     return loss.item()/ target_length
 
