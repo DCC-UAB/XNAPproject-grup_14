@@ -306,6 +306,8 @@ def train(input_variable, target_variable, encoder, decoder, encoder_optimizer, 
     encoder_optimizer.step()
     decoder_optimizer.step()
 
+     wandb.log({"loss": loss.item() / target_length})
+
     return loss.item()/ target_length
 
 
@@ -356,13 +358,20 @@ def trainIters(encoder, decoder, n_iters, print_every=1000, plot_every=100, lear
             print_loss_total = 0
             print('%s (%d %d%%) %.4f' % (timeSince(start, iter / n_iters),
                                          iter, iter / n_iters * 100, print_loss_avg))
+            wandb.log({"avg_loss": print_loss_avg, "iter": iter})
+        
 
         if iter % plot_every == 0:
             plot_loss_avg = plot_loss_total / plot_every
             plot_losses.append(plot_loss_avg)
             plot_loss_total = 0
+            
+    torch.save(encoder.state_dict(), 'encoder1.params.pkl')
+    torch.save(decoder.state_dict(), 'attn_decoder1.params.pkl')
+    wandb.save('encoder1.params.pkl')
+    wandb.save('attn_decoder1.params.pkl')
 
-    #showPlot(plot_losses)
+    showPlot(plot_losses)
 
 
 
