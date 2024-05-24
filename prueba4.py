@@ -15,6 +15,20 @@ import torch.nn.functional as F
 
 use_cuda = torch.cuda.is_available()
 
+import wandb
+wandb.login()
+
+# Inicialització wandb
+wandb.init(project="seq2seq_translation", config={
+    "hidden_size": 256,
+    "n_iters": 8000,
+    "print_every": 2000,
+    "learning_rate": 0.01,
+    "teacher_forcing_ratio": 0.5,
+    "dropout_p": 0.1,
+    "max_length": MAX_LENGTH
+})
+config = wandb.config
 
 
 SOS_token = 0
