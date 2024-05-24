@@ -492,7 +492,8 @@ def evaluateAndShowAttention(input_sentence):
         encoder1, attn_decoder1, input_sentence)
     print('input =', input_sentence)
     print('output =', ' '.join(output_words))
-    #showAttention(input_sentence, output_words, attentions)
+    showAttention(input_sentence, output_words, attentions)
+    wandb.log({"input_sentence": input_sentence, "output_sentence": ' '.join(output_words)})
 
 
 evaluateAndShowAttention("ich hab s gemacht .")
