@@ -19,7 +19,13 @@ Preguntes setmana 2 (17/05):
   5) Com millorar el rendiment dels models?
   6) Quin dels models ens dona més rendiment al principi? Amb quin aconseguim millors resultats? (GRU vs LSTM)
 
-
+Preguntes setmana 3 (31/05):
+  1) Realitzar gràfica amb loss i validation per veure si hi ha overfitting.
+  2) Modificar el tamany del hidden layer per veure com afecta al rendiment.
+  3) Que fan Blue i Rouge? Per què els hem escollit?
+  4) Realitzar gràfiques cada epoch (no mini-batches).
+  5) GRU o LSTM, quin dels dos ens funciona millor?
+  6) Realitzar comparacions entre word2vec i one hot-encoding.
 
 
 
