@@ -78,7 +78,24 @@ Cell type = GRU
 Epochs = 25
 Optimizer= Adam
 
+### Tamany de les dades 
+El primer hiperparàmetre que hem començat a analitzar és el tamany de les dades, en el nostre codi es modifica a través de la variable max_length. Comencem fent diferents proves des de 40.000 parells d'oracions, on el valid loss és gairebé 2, fins a proves amb 130.000 parells d'oracions on arribem a reduir el valid loss per sota d'1. 
 
+Per tant, podem dir que aquest hiperparàmetre és el que més redueix l'overfitting en el nostre model, però, per altra banda, també augmenta molt el temps d'entrenament. En conseqüència, busquem un punt intermig on el nostre model no pateixi overfitting i el temps d'entrenament no sigui molt elevat. 
+
+Finalment, hem decidit que el millor valor pel max_length és 10 on agafem 130.000 parells d'oracions, ja que encara que el temps d'entrenament és una mica elevat, la reducció de l'overfitting que ens proporciona aquest tamany és molt important. També cal dir que si tinguéssim més temps i poguéssim entrenar el model amb el dataset complet (270.000 parells d'oracions) podríem reduir encara molt més el valid loss.
+
+![image](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/65753d0d-0453-4c6b-9a86-d552b671d3f8)
+![image](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/bb202466-447d-41c6-8260-802584260f65)
+
+### Batch_size
+La mida del batch_size indica quantes mostres d'entrenament s'utilitzen en cada iteració del procés d'entrenament. Aquest hiperparàmetre es pot ajustar i determina el nombre de mostres processades simultàniament abans d'actualitzar els pesos del model. Una mida de batch_size més gran pot accelerar l'entrenament, mentre que una mida més petita pot proporcionar estimacions de gradient més precises. Per això vam decidir experimentar amb diferents mides per trobar la més adequada.
+
+Fem 4 proves amb batch_size diferents, on provem amb 32, 64, 128 i 256. I com podem veure a les gràfiques de valid loss i train loss la millor mida de batch és 64, ja que és on obtenim un loss més petit. També comparem els diferents batch_size pel que fa al bleu i també obtenim que 64 és el millor resultat. Per tant, agafem un batch_size de 64 com a resultat final, ja que tant com en overfitting com en precisió de traducció és el millor resultat obtingut. 
+
+![image](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/df7a0472-37ee-4006-9fa9-f1a5770e4ddb)
+![image](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/390228f1-1ffe-4e6d-9a4f-a356029f7331)
+![image](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/639f2f7b-0d8c-4633-b2c8-337d33901470)
 
 ### Dropout
 Un altre paràmetre a tenir en compte és el dropout, un métode per reduïr l’overfitting que veurem a continuació els seus efectes:
@@ -88,7 +105,6 @@ Amb un dropout de 0.2, la train loss és significativament menor que la valid lo
 Amb un dropout de 0.7, passa més bé el contrari, la train i valid loss són gairebé paral·leles i pròximes entre si. Això mostra que el model no se està sobreajustant al les dades de train i té una millor capacitat de generalització, ja que l'alta taxa de dropout obliga el model a aprendre representacions més robustes i oblidarse de les més detallades del conjunt de train. No obstant això, aquest model obté el pitjor acompliment en termes de Bleu, ja que malgrat capturar els patrons més importants, no ha entrat suficientment en detall per realitzar bones traduccions.
 
 Amb un dropout equilibrat (0.5) obtenim unes métriques intermitges entre els dos models anteriors. Aquests resultats ens serviran per execucions posteriors, tenint en compte la quantitat de traduccions que alimenten el model i la seva complexitat, és clar.
-
 
 
 ### Learning Rate
@@ -103,6 +119,15 @@ FOTO 1,2,3
 
 ![image](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/747123c1-d5d2-4f76-aa3f-145840513a22)
 
+### Hidden_size
+Hidden_size és un paràmetre que defineix el nombre d'unitats en les capes ocultes de la xarxa neuronal. En el codificador del model , determina la dimensió del vector d'estat ocult que representa la informació acumulada mentre es processa la seqüència d'entrada. I en el descodificador, defineix la mida del vector d'estat ocult que s'utilitza per generar la seqüència de sortida paraula per paraula, basant-se en el vector de context i l'estat ocult anterior.
+
+Un major hidden_size permet a la xarxa capturar més informació i patrons complexos en les seqüències d'entrada, però també incrementa el nombre de paràmetres del model, cosa que pot augmentar el temps d'entrenament i la demanda de memòria. En canvi, un hidden_size massa petit pot resultar en una capacitat insuficient per modelar adequadament les dependències en les dades, mentre que una mida massa gran pot portar a sobreajustament.
+
+Seguidament, fem proves amb 3 tamanys diferents de hidden_size (64, 128 i 256) i com podem veure a la gràfica de train i valid loss quan obtenim menys overfitting és amb una mida de 64, però això és perquè el tamany de les dades és molt petit. Per tant, com a conclusió podem dir que per tamanys de dades petits és millor utilitzar un hidden_size de 64, però per un tamany de dades grans és millor utilitzar el de 256. En conseqüència, per la nostra execució final utilitzarem un hidden_size de 256 perquè el tamany de dades que utilitzarem en aquesta execució serà molt gran. 
+
+![image](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/e3a9a73d-a129-4d84-8e20-2802e2f7d809)
+![image](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/2ec921eb-fe21-49ee-9bcf-4c92bd3d7db7)
 
 
 
