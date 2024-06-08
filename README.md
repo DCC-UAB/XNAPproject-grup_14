@@ -172,8 +172,8 @@ També hem elaborat unes matrius d'atenció que ens mostren com es relacionen le
 
 En aquesta matriu, les files representen les paraules en anglès (el text de destinació) i les columnes representen les paraules en alemany (el text d'origen). Cada cel·la de la matriu conté un valor que indica la importància de cada paraula alemanya quan es genera una paraula anglesa. L'hem utilitzada ja que pensem que la matriu d'atenció, representada com un mapa de calor (heatmap), proporciona una manera intuïtiva de veure quines parts de la frase d'origen influeixen més en la generació de cada paraula de la frase de destinació.
 
-<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/c7046100-5e76-47fc-b9db-7ec2ac367031" width="250" height="150">
-<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/749d1c61-610a-421e-9113-ba6954ab6854" width="250" height="150">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/c7046100-5e76-47fc-b9db-7ec2ac367031" width="400" height="250">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/749d1c61-610a-421e-9113-ba6954ab6854" width="400" height="250">
 
 <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/14a2731c-434f-4294-96ea-018219ec6719" width="500" height="300">
 <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/6287c86e-8fdd-4d8a-806b-f047386d9b76" width="500" height="300">
@@ -185,6 +185,8 @@ En aquesta matriu, les files representen les paraules en anglès (el text de des
 Com podem observar en les gràfiques que utilitzem per avaluar el rendiment i qualitat del nostre model, el model inicial presentava bastant overfitting i un bleu que arribava a 0.3. 
 
 Amb el nostre model final conseguim reduir molt l'overfitting que presentava i augmentar el valor del bleu fins a 0.48(fent així que les traduccion siguin molt més precises).
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/4792e45c-7e06-4302-aae4-4ab27a7d79d1" width="500" height="300">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/8941839c-7eaf-431f-8534-59bdf50949dd" width="500" height="300">
 
 ### Comparativa amb diferents idiomes
 Per a fer aquesta prova hem utilitzat tots 2 models entrenats amb 70k frases, el nou idioma que hem provat ha sigut el holandès (dutch) per tant farem la traducció de (holandès a anglès).
