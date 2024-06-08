@@ -191,8 +191,8 @@ Amb el nostre model final conseguim reduir molt l'overfitting que presentava i a
 ### Comparativa amb diferents idiomes
 Per a fer aquesta prova hem utilitzat tots 2 models entrenats amb 70k frases, el nou idioma que hem provat ha sigut el holandès (dutch) per tant farem la traducció de (holandès a anglès).
 
-<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/7057c371-58a7-43c2-b5d8-95a076fd7432" width="500" height="300">
-<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/51f018f1-e0d3-4690-8d6d-6291d6b33724" width="500" height="300">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/7057c371-58a7-43c2-b5d8-95a076fd7432" width="350" height="225">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/51f018f1-e0d3-4690-8d6d-6291d6b33724" width="350" height="225">
 <p align="center">
   <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/c956a718-a861-4e7b-b527-936fe0cdebb1" width="300" height="150">
 </p>
