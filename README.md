@@ -72,10 +72,15 @@ __Train Loss__: El train loss indica la pèrdua durant l'entrenament del model, 
 __Valid Loss__: El valid loss indica la pèrdua durant la validació, reflectint l'error sobre les dades de validació no vistes durant l'entrenament
 
 El cas base que tenim és el següent:
+
 Learning Rate = 0.01
+
 Dropout = 0.1
+
 Cell type = GRU
+
 Epochs = 25
+
 Optimizer= Adam
 
 ### Tamany de les dades 
@@ -86,9 +91,7 @@ Per tant, podem dir que aquest hiperparàmetre és el que més redueix l'overfit
 Finalment, hem decidit que el millor valor pel max_length és 10 on agafem 130.000 parells d'oracions, ja que encara que el temps d'entrenament és una mica elevat, la reducció de l'overfitting que ens proporciona aquest tamany és molt important. També cal dir que si tinguéssim més temps i poguéssim entrenar el model amb el dataset complet (270.000 parells d'oracions) podríem reduir encara molt més el valid loss.
 
 <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/65753d0d-0453-4c6b-9a86-d552b671d3f8" width="500" height="300">
-![image](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/65753d0d-0453-4c6b-9a86-d552b671d3f8)
-
-![image](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/bb202466-447d-41c6-8260-802584260f65)
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/bb202466-447d-41c6-8260-802584260f65" width="500" height="300">
 
 ### Batch_size
 La mida del batch_size indica quantes mostres d'entrenament s'utilitzen en cada iteració del procés d'entrenament. Aquest hiperparàmetre es pot ajustar i determina el nombre de mostres processades simultàniament abans d'actualitzar els pesos del model. Una mida de batch_size més gran pot accelerar l'entrenament, mentre que una mida més petita pot proporcionar estimacions de gradient més precises. Per això vam decidir experimentar amb diferents mides per trobar la més adequada.
