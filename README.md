@@ -71,6 +71,15 @@ __Train Loss__: El train loss indica la pèrdua durant l'entrenament del model, 
 
 __Valid Loss__: El valid loss indica la pèrdua durant la validació, reflectint l'error sobre les dades de validació no vistes durant l'entrenament
 
+El cas base que tenim és el següent:
+Learning Rate = 0.01
+Dropout = 0.1
+Cell type = GRU
+Epochs = 25
+Optimizer= Adam
+
+
+
 ### Dropout
 Un altre paràmetre a tenir en compte és el dropout, un métode per reduïr l’overfitting que veurem a continuació els seus efectes:
 
@@ -91,6 +100,22 @@ En canvi, un lr més alta (0.01) pot fer que el model aprengui massa ràpid. A l
 
 Per a aquest model i conjunt de dades, la taxa d'aprenentatge de 0.001 ofereix el millor rendiment, proporcionant una disminució constant i efectiva de la pèrdua de validació.
 FOTO 1,2,3
+
+![image](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/747123c1-d5d2-4f76-aa3f-145840513a22)
+
+
+
+
+## Execucions finals
+
+Finalment vam fer una execució llarga amb els hiperparàmetres que millor funcionen per a tamanys de dades més grans. Al augmentar las epochs a 80.
+Els nostres paràmetres finals que utilitzem per a l'última execució són els següents:
+Cell_type = GRU            130K sentences pairs 
+LR = 0,001                     Random dataloader
+Optimizer = Adam           Dropout = 0,3  
+Hidden_size= 256           Batch_size = 64 
+
+
 ## Contributors
 Enric Canudas 1631674@uab.cat
 
