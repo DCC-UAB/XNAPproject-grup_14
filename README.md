@@ -56,7 +56,7 @@ En els nostres experiments, hem observat que les GRU superen a les LSTM en rendi
 FOTO
 
 
-# Hiperparàmetres
+## Hiperparàmetres
 Partint d'uns hiperparàmetres base, volem optimitzar el nostre model per a que funcioni millor amb les mètriques que determinaran el rendiment del nostre model. En el nostre cas, seran:
 
 __Bleu (Bilingual Evaluation Understudy) Score__: És una mètrica utilitzada en el processament del llenguatge natural (NLP) i la traducció automàtica per avaluar la qualitat del text generat envers una o varies traduccions de referencia d'alta qualitat.
@@ -70,6 +70,26 @@ __Train Loss__: El train loss indica la pèrdua durant l'entrenament del model, 
 
 
 __Valid Loss__: El valid loss indica la pèrdua durant la validació, reflectint l'error sobre les dades de validació no vistes durant l'entrenament
+
+### Dropout
+Un altre paràmetre a tenir en compte és el dropout, un métode per reduïr l’overfitting que veurem a continuació els seus efectes:
+
+Amb un dropout de 0.2, la train loss és significativament menor que la valid loss i veiem que mentre la train baixa, la valid comença a augmentar. Això indica que el model se està sobreajustant a les dades d'entrenament, capturant patrons i detalls específics que faran que no generalitzi bé a dades noves de test. Podem interpretar que el model segueix sent massa complex, malgrat que es descativin el 20% de les neurones per cada epoch, per la complexitat de les dades que alimenten el model tot i haver l’overfitting, aquest valor de dropout resulta en la millor avaluació dels tres.
+
+Amb un dropout de 0.7, passa més bé el contrari, la train i valid loss són gairebé paral·leles i pròximes entre si. Això mostra que el model no se està sobreajustant al les dades de train i té una millor capacitat de generalització, ja que l'alta taxa de dropout obliga el model a aprendre representacions més robustes i oblidarse de les més detallades del conjunt de train. No obstant això, aquest model obté el pitjor acompliment en termes de Bleu, ja que malgrat capturar els patrons més importants, no ha entrat suficientment en detall per realitzar bones traduccions.
+
+Amb un dropout equilibrat (0.5) obtenim unes métriques intermitges entre els dos models anteriors. Aquests resultats ens serviran per execucions posteriors, tenint en compte la quantitat de traduccions que alimenten el model i la seva complexitat, és clar.
+
+
+
+### Learning Rate
+El learning rate és un altre factor a tindre en compte, que determina la rapidesa en la que el model aprendrà els patrons del train set.
+
+Un valor de 0.0001 per al "learning rate" és bastant petit. Això significa que els ajustos als pesos seran molt petits en cada pas de l'entrenament. Quan hi ha poques èpoques o poques dades (com es el nostre cas), un "learning rate" tan petit pot fer que el model aprengui molt lentament, ja que els ajustos són massa petits per a tenir un impacte significatiu en els pesos de la xarxa, com podem obervar és el model que seguiex decrementant la loss però a molt baixa velocitat .
+
+En canvi, un lr més alta (0.01) pot fer que el model aprengui massa ràpid. A la gràfica podem observar que decrementa la loss a les primeres epoch i gairebé el 80% del entrenament es manté gairebé constant, el que significa que tot el cómput invertit no ha valgut de res
+
+Per a aquest model i conjunt de dades, la taxa d'aprenentatge de 0.001 ofereix el millor rendiment, proporcionant una disminució constant i efectiva de la pèrdua de validació
 
 
 ## Contributors
