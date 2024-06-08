@@ -29,9 +29,40 @@ El nostre decodificador utilitza el mecanisme d'atenció (Attention) que permet 
 
 ![image](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91469023/bf73d475-a1c5-4715-b8b7-b81268195d21)
 
+Per a crear un model seq2seq eficient i robust, hem dut a terme una anàlisi exhaustiva de diversos factors clau que poden afectar el seu rendiment. Cadascun d'aquests factors ha estat estudiat meticulosament, i hem elaborat gràfics per a entendre-ho millor i permetre’ns prendre decisions informades per optimitzar cada aspecte del disseny i entrenament del model. A continuació, descrivim els principals aspectes considerats:
 
-## LSTM
 
+
+## DATALOADER
+En el context d'entrenament de models de NLP, la forma en què les dades són carregades i presentades al model pot tenir un impacte significatiu en el rendiment i la generalització. 
+
+Un DataLoader normal càrrega les dades en l'ordre en què són presents en el dataset. En el nostre cas, el dataset de frases està ordenat segons la longitud de les frases, començant amb frases d'una sola paraula, després de dues paraules, i així successivament. Això pot portar a diversos problemes: 
+El model pot aprendre a reconèixer patrons específics de longitud en lloc de generalitzar sobre l'estructura de les frases. Per exemple, si durant diverses iteracions el model només veu frases de longitud similar, pot adaptar-se a aquestes longituds i no aprendre a manejar adequadament frases de diferent longitud.
+
+Si l'entrenament es realitza en un ordre fix, les frases més simples (curtes) poden influir desproporcionadament en les primeres etapes de l'entrenament, mentre que les frases més complexes (llargues) poden no rebre suficient atenció.
+
+En canvi, un Random DataLoader barreja aleatòriament les frases abans de carregar-les, el que fa que el model s'exposi constantment a la variabilitat en la longitud de les frases, la qual cosa pot ajudar a millorar la seva capacitat per a manejar seqüències de diferents longituds durant la inferència. Aquesta simple acció fa que ens trobem millores en el model:
+
+FOTO
+FOTO2
+## GRU VS LSTM
+Dos de les arquitectures seq2seq més conegudes són les basades en GRU (Gated Recurrent Units) i LSTM (Long Short-Term Memory). 
+
+L'arquitectura GRU és una variant de les RNN, que introdueix mecanismes de comportes per a manejar millor la dependència temporal i la memòria a curt termini en les seqüències de dades. Les GRU són més simples que les LSTM perquè utilitzen menys paràmetres, la qual cosa les fa més eficients en termes de càlcul i memòria. A causa d'aquesta simplicitat, les GRU poden entrenar-se més ràpidament i amb menys recursos, la qual cosa les fa adequades per a tasques on la longitud de les seqüències no és excessivament llarga, com és el nostre cas.
+
+L'arquitectura LSTM és una altra variant de les RNN, dissenyada per a superar els problemes d'esvaïment i explosió del gradient que dificulten l'aprenentatge de dependències a llarg termini en seqüències llargues. Les LSTM incorporen una estructura de memòria més complexa, amb comportes d'entrada, sortida i oblit que permeten retenir informació rellevant durant períodes més llargs de temps. Aquesta capacitat de manejar dependències a llarg termini fa que les LSTM siguin especialment efectives en tasques on les seqüències d'entrada són extenses i contenen dependències de llarga durada.
+
+En els nostres experiments, hem observat que les GRU superen a les LSTM en rendiment. Això es deu al fet que les frases en el nostre conjunt de dades no són prou llargues perquè les capacitats de memòria estesa de les LSTM tinguin un impacte significatiu. Les GRU, sent més simples i eficients, dominen les seqüències de longitud curta a mitjana de manera més efectiva en el nostre cas particular.
+FOTO
+
+
+## Hiperparàmetres
+Partint d'uns hiperparàmetres base, volem optimitzar el nostre model per a que funcioni millor amb les mètriques que determinaran el rendiment del nostre model. En el nostre cas, seran:
+Bleu (Bilingual Evaluation Understudy) Score: És un mètode d'avaluació de la qualitat de traduccions realitzades per sistemes de traducció automàtica 
+Train Loss: El train loss indica la pèrdua durant l'entrenament del model, reflectint l'error sobre les dades d'entrenament
+![image](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/daa32eb1-ac7b-41c8-9f8f-ae42960ded70)
+Valid Loss: El valid loss indica la pèrdua durant la validació, reflectint l'error sobre les dades de validació no vistes durant l'entrenament
+![image](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/16c112d5-c227-4689-980f-35330bcbe2dd)
 
 
 ## Contributors
