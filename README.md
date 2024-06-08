@@ -56,7 +56,7 @@ En els nostres experiments, hem observat que les GRU superen a les LSTM en rendi
 FOTO
 
 
-## Hiperparàmetres
+# Hiperparàmetres
 Partint d'uns hiperparàmetres base, volem optimitzar el nostre model per a que funcioni millor amb les mètriques que determinaran el rendiment del nostre model. En el nostre cas, seran:
 Bleu (Bilingual Evaluation Understudy) Score: És un mètode d'avaluació de la qualitat de traduccions realitzades per sistemes de traducció automàtica 
 Train Loss: El train loss indica la pèrdua durant l'entrenament del model, reflectint l'error sobre les dades d'entrenament
