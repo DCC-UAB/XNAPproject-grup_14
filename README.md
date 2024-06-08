@@ -89,9 +89,13 @@ Un valor de 0.0001 per al "learning rate" és bastant petit. Això significa que
 
 En canvi, un lr més alta (0.01) pot fer que el model aprengui massa ràpid. A la gràfica podem observar que decrementa la loss a les primeres epoch i gairebé el 80% del entrenament es manté gairebé constant, el que significa que tot el cómput invertit no ha valgut de res
 
-Per a aquest model i conjunt de dades, la taxa d'aprenentatge de 0.001 ofereix el millor rendiment, proporcionant una disminució constant i efectiva de la pèrdua de validació
+Per a aquest model i conjunt de dades, la taxa d'aprenentatge de 0.001 ofereix el millor rendiment, proporcionant una disminució constant i efectiva de la pèrdua de validació.
+
+![lr1](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/3a757405-fd9e-421e-9d82-628857c407f9)
+![lr2](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/715c7f87-4e5a-4f81-8cc9-1de4941b516f)
 
 
+![lr3](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/b1a200d5-8431-423f-bee0-d72278a76ff1)
 ## Contributors
 Enric Canudas 1631674@uab.cat
 
