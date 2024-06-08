@@ -155,6 +155,7 @@ Dropout = 0,3
 Hidden_size= 256   
 
 Batch_size = 64 
+
 <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/15da6c9f-a367-4d64-8354-775b9b45a888" width="500" height="300">
 <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/76a9a95f-6c8f-401f-9a3f-e0676892d681" width="500" height="300">
 
@@ -170,8 +171,15 @@ Per a traduccions més curtes té un grau de similitut exacte i per a traduccion
 També hem elaborat unes matrius d'atenció que ens mostren com es relacionen les paraules d'un idioma amb les de l'altre durant una traducció.En aquest cas, parlem d'una traducció de l'alemany a l'anglès. 
 
 En aquesta matriu, les files representen les paraules en anglès (el text de destinació) i les columnes representen les paraules en alemany (el text d'origen). Cada cel·la de la matriu conté un valor que indica la importància de cada paraula alemanya quan es genera una paraula anglesa. L'hem utilitzada ja que pensem que la matriu d'atenció, representada com un mapa de calor (heatmap), proporciona una manera intuïtiva de veure quines parts de la frase d'origen influeixen més en la generació de cada paraula de la frase de destinació.
+
 <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/c7046100-5e76-47fc-b9db-7ec2ac367031" width="250" height="150">
-<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/14a2731c-434f-4294-96ea-018219ec6719" width="250" height="150">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/749d1c61-610a-421e-9113-ba6954ab6854" width="250" height="150">
+
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/14a2731c-434f-4294-96ea-018219ec6719" width="500" height="300">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/6287c86e-8fdd-4d8a-806b-f047386d9b76" width="500" height="300">
+
+
+
 
 ### Comparació del model inicial vs model final
 Com podem observar en les gràfiques que utilitzem per avaluar el rendiment i qualitat del nostre model, el model inicial presentava bastant overfitting i un bleu que arribava a 0.3. 
