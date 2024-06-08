@@ -90,17 +90,17 @@ Per tant, podem dir que aquest hiperparàmetre és el que més redueix l'overfit
 
 Finalment, hem decidit que el millor valor pel max_length és 10 on agafem 130.000 parells d'oracions, ja que encara que el temps d'entrenament és una mica elevat, la reducció de l'overfitting que ens proporciona aquest tamany és molt important. També cal dir que si tinguéssim més temps i poguéssim entrenar el model amb el dataset complet (270.000 parells d'oracions) podríem reduir encara molt més el valid loss.
 
-<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/65753d0d-0453-4c6b-9a86-d552b671d3f8" width="500" height="300">
-<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/bb202466-447d-41c6-8260-802584260f65" width="500" height="300">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/65753d0d-0453-4c6b-9a86-d552b671d3f8" width="500" height="300"> <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/bb202466-447d-41c6-8260-802584260f65" width="500" height="300">
 
 ### Batch_size
 La mida del batch_size indica quantes mostres d'entrenament s'utilitzen en cada iteració del procés d'entrenament. Aquest hiperparàmetre es pot ajustar i determina el nombre de mostres processades simultàniament abans d'actualitzar els pesos del model. Una mida de batch_size més gran pot accelerar l'entrenament, mentre que una mida més petita pot proporcionar estimacions de gradient més precises. Per això vam decidir experimentar amb diferents mides per trobar la més adequada.
 
 Fem 4 proves amb batch_size diferents, on provem amb 32, 64, 128 i 256. I com podem veure a les gràfiques de valid loss i train loss la millor mida de batch és 64, ja que és on obtenim un loss més petit. També comparem els diferents batch_size pel que fa al bleu i també obtenim que 64 és el millor resultat. Per tant, agafem un batch_size de 64 com a resultat final, ja que tant com en overfitting com en precisió de traducció és el millor resultat obtingut. 
 
-![image](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/df7a0472-37ee-4006-9fa9-f1a5770e4ddb)
-![image](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/390228f1-1ffe-4e6d-9a4f-a356029f7331)
-![image](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/639f2f7b-0d8c-4633-b2c8-337d33901470)
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/df7a0472-37ee-4006-9fa9-f1a5770e4ddb" width="500" height="300">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/390228f1-1ffe-4e6d-9a4f-a356029f7331" width="500" height="300">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/639f2f7b-0d8c-4633-b2c8-337d33901470" width="500" height="300">
+
 
 ### Dropout
 Un altre paràmetre a tenir en compte és el dropout, un métode per reduïr l’overfitting que veurem a continuació els seus efectes:
