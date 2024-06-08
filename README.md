@@ -60,9 +60,7 @@ FOTO
 Partint d'uns hiperparàmetres base, volem optimitzar el nostre model per a que funcioni millor amb les mètriques que determinaran el rendiment del nostre model. En el nostre cas, seran:
 Bleu (Bilingual Evaluation Understudy) Score: És un mètode d'avaluació de la qualitat de traduccions realitzades per sistemes de traducció automàtica 
 Train Loss: El train loss indica la pèrdua durant l'entrenament del model, reflectint l'error sobre les dades d'entrenament
-![image](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/daa32eb1-ac7b-41c8-9f8f-ae42960ded70)
 Valid Loss: El valid loss indica la pèrdua durant la validació, reflectint l'error sobre les dades de validació no vistes durant l'entrenament
-![image](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/16c112d5-c227-4689-980f-35330bcbe2dd)
 
 
 ## Contributors
