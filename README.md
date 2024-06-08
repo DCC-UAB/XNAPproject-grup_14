@@ -64,6 +64,8 @@ BLEU funciona comparant n-grames (seqüències de n paraules consecutives) entre
 ![image](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/8b670908-75a3-4c95-b21c-c82d1f67236b)
 
 Train Loss: El train loss indica la pèrdua durant l'entrenament del model, reflectint l'error sobre les dades d'entrenament
+
+
 Valid Loss: El valid loss indica la pèrdua durant la validació, reflectint l'error sobre les dades de validació no vistes durant l'entrenament
 
 
