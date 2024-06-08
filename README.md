@@ -172,11 +172,11 @@ També hem elaborat unes matrius d'atenció que ens mostren com es relacionen le
 
 En aquesta matriu, les files representen les paraules en anglès (el text de destinació) i les columnes representen les paraules en alemany (el text d'origen). Cada cel·la de la matriu conté un valor que indica la importància de cada paraula alemanya quan es genera una paraula anglesa. L'hem utilitzada ja que pensem que la matriu d'atenció, representada com un mapa de calor (heatmap), proporciona una manera intuïtiva de veure quines parts de la frase d'origen influeixen més en la generació de cada paraula de la frase de destinació.
 
-<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/c7046100-5e76-47fc-b9db-7ec2ac367031" width="400" height="250">
-<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/749d1c61-610a-421e-9113-ba6954ab6854" width="400" height="250">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/c7046100-5e76-47fc-b9db-7ec2ac367031" width="300" height="200">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/749d1c61-610a-421e-9113-ba6954ab6854" width="300" height="200">
 
-<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/14a2731c-434f-4294-96ea-018219ec6719" width="500" height="300">
-<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/6287c86e-8fdd-4d8a-806b-f047386d9b76" width="500" height="300">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/14a2731c-434f-4294-96ea-018219ec6719" width="400" height="250">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/6287c86e-8fdd-4d8a-806b-f047386d9b76" width="400" height="250">
 
 
 
@@ -190,6 +190,12 @@ Amb el nostre model final conseguim reduir molt l'overfitting que presentava i a
 
 ### Comparativa amb diferents idiomes
 Per a fer aquesta prova hem utilitzat tots 2 models entrenats amb 70k frases, el nou idioma que hem provat ha sigut el holandès (dutch) per tant farem la traducció de (holandès a anglès).
+
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/7057c371-58a7-43c2-b5d8-95a076fd7432" width="500" height="300">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/51f018f1-e0d3-4690-8d6d-6291d6b33724" width="500" height="300">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/c956a718-a861-4e7b-b527-936fe0cdebb1" width="300" height="150">
+
+
 
 
 ## Conclusions
