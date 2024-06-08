@@ -9,11 +9,11 @@ Aquest projecte conté tot el necessari per executar el codi. A la carpeta idiom
 Després tenim diferents notebooks (.ipynb) amb els codis a executar per posar el model en funcionament, hi ha diferents arxius que hem anat actualitzant per arribar al notebook definitiu que conté el codi de l'execució final model_pytorch_bleu_rouge.ipynb. Aquest arxiu conté tot el codi on primer consten totes les funcions que realitzen el preprocessament de les dades. Després hi tenim les classes que defineixen el encoder, el decoder i el decoder amb atenció. Posteriorment, hi consta el codi que crea els dataloaders i finalment el que realitza l'entrenament i validació del model on al final es veuen exemples de diferents traduccions i la visualització del heatmap de l'atenció.
 
 ## How to use the code?
-1 - Descarregar els dos datasets de traduccions que conté la carpeta idiomes.
+__1__ - Descarregar els dos datasets de traduccions que conté la carpeta idiomes.
 
-2 - A l'anar al notebook posar la key d'usuari a la cel·la de wandb.
+__2__ - A l'anar al notebook posar la key d'usuari a la cel·la de wandb.
 
-3 - Anar executant el codi cel·la per cel·la.
+__3__ - Anar executant el codi cel·la per cel·la.
 
 ## Dataset
 Per aquest projecte hem utilitzat el dataset Anki que conté una recopilació de traduccions d'oracions de diverses longituds per diferents idiomes. És un dataset ja especialitzat per l'entrenament i validació de models de traducció automàtica. Per al projecte hem agafat el dataset amb traduccions de l'anglès a l'alemany (270.000 traduccions) i de l'anglès a l'holandès (80.000 traduccions).
@@ -59,17 +59,17 @@ FOTO
 # Hiperparàmetres
 Partint d'uns hiperparàmetres base, volem optimitzar el nostre model per a que funcioni millor amb les mètriques que determinaran el rendiment del nostre model. En el nostre cas, seran:
 
-Bleu (Bilingual Evaluation Understudy) Score: És una mètrica utilitzada en el processament del llenguatge natural (NLP) i la traducció automàtica per avaluar la qualitat del text generat envers una o varies traduccions de referencia d'alta qualitat.
+__Bleu (Bilingual Evaluation Understudy) Score__: És una mètrica utilitzada en el processament del llenguatge natural (NLP) i la traducció automàtica per avaluar la qualitat del text generat envers una o varies traduccions de referencia d'alta qualitat.
 BLEU funciona comparant n-grames (seqüències de n paraules consecutives) entre el text generat i els textes de referència. 
 
 Calcula la precisió tenint en compte quants n-grams del text generat coincideixen amb els del text o textos de referència. A continuació, la puntuació de precisió es modifica amb una penalització per brevetat per evitar que es afavoreixin les traduccions més curtes.
 
 ![image](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/8b670908-75a3-4c95-b21c-c82d1f67236b)
 
-Train Loss: El train loss indica la pèrdua durant l'entrenament del model, reflectint l'error sobre les dades d'entrenament
+__Train Loss__: El train loss indica la pèrdua durant l'entrenament del model, reflectint l'error sobre les dades d'entrenament
 
 
-Valid Loss: El valid loss indica la pèrdua durant la validació, reflectint l'error sobre les dades de validació no vistes durant l'entrenament
+__Valid Loss__: El valid loss indica la pèrdua durant la validació, reflectint l'error sobre les dades de validació no vistes durant l'entrenament
 
 
 ## Contributors
