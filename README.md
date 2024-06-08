@@ -85,7 +85,9 @@ Per tant, podem dir que aquest hiperparàmetre és el que més redueix l'overfit
 
 Finalment, hem decidit que el millor valor pel max_length és 10 on agafem 130.000 parells d'oracions, ja que encara que el temps d'entrenament és una mica elevat, la reducció de l'overfitting que ens proporciona aquest tamany és molt important. També cal dir que si tinguéssim més temps i poguéssim entrenar el model amb el dataset complet (270.000 parells d'oracions) podríem reduir encara molt més el valid loss.
 
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/65753d0d-0453-4c6b-9a86-d552b671d3f8" width="500" height="300">
 ![image](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/65753d0d-0453-4c6b-9a86-d552b671d3f8)
+
 ![image](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/bb202466-447d-41c6-8260-802584260f65)
 
 ### Batch_size
