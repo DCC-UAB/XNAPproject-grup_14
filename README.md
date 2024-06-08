@@ -145,6 +145,19 @@ Amb el nostre model final conseguim reduir molt l'overfitting que presentava i a
 ### Comparativa amb diferents idiomes
 Per a fer aquesta prova hem utilitzat tots 2 models entrenats amb 70k frases, el nou idioma que hem provat ha sigut el holandès (dutch) per tant farem la traducció de (holandès a anglès).
 
+
+## Conclusions
+Com a conclusions del projecte, pensem que ha sigut un projecte profitós per a tots en el que no només hem aprofundit en el funcionament i optimització del model amb estructura seq2seq RNN sinó que també hem après noves eines i formes de treballar. Ja sigui amb les màquines Azure que ens ha donat la capacitat de realitzar execucions més potents (encara que estiguessim limitats per les hores) i la interfaç de Weights & Biases (que encara que al principi s'ha d'aprendre a com gestionar) ens ha permet realitzar gràfiques per epoch d'una manera més eficient i automàtica (una vegada ja configurada).
+
+Pensem que hem aconseguit millorar notablement el nostre starting_point (encara que les mètriques avaluadores no siguin excel·lents) i aprofundir més en com funcionen la traducció de llenguatges emprant models del tipus Seq2Seq RNN.
+
+Tot i així, també ens hem trobat amb varies dificultats que no ens van permetre obtenir encara millors resultats.
+Un d'ells és que no vam poder utilitzar els Starting Points fet amb Keras per problemes d'incompatibilitat i vam haver de canviar-ho per models de Pytorch (alentint-nos en el nostre procés de treball).
+Altre punt,és que conforme més temps tingui el model per poder entrenar-se millors resultats podrà donar, i tenint en compte les restriccions de complexitat i temps que teniem amb les màquines Azure (30h) no vam poder arribar a aconseguir uns nivells excel·lents en les nostres mètriques.
+
+
+
+
 ## Contributors
 Enric Canudas 1631674@uab.cat
 
