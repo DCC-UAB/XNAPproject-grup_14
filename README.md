@@ -110,11 +110,40 @@ FOTO 1,2,3
 
 Finalment vam fer una execució llarga amb els hiperparàmetres que millor funcionen per a tamanys de dades més grans. Al augmentar las epochs a 80.
 Els nostres paràmetres finals que utilitzem per a l'última execució són els següents:
-Cell_type = GRU            130K sentences pairs 
-LR = 0,001                     Random dataloader
-Optimizer = Adam           Dropout = 0,3  
-Hidden_size= 256           Batch_size = 64 
+Cell_type = GRU
 
+130K sentences pairs
+
+LR = 0,001 
+
+Random dataloader
+
+Optimizer = Adam 
+
+Dropout = 0,3
+
+Hidden_size= 256   
+
+Batch_size = 64 
+
+Podem observar que el Bleu arriba fins a uns valors de 0.45 (per a una traducció utilitzant la mètrica Bleu estem parlant d'una traducció molt bona).
+
+També es pot observar que comparat amb les anteriors execucions,hem aconseguit reduir notablement l'overfitting que presentava.
+### Exemples de predicció
+Com es pot veure, les traduccions que fa encara no ser perfectes per a traduccions més complexes (ja sigui per estructura de la oració i llargària d'aquesta) si que podem dir que arriba a una traducció prou acurada.
+Per a traduccions més curtes té un grau de similitut exacte i per a traduccions més complexes fa una traducció prou bona, encara que no perfecte.
+
+També hem elaborat unes matrius d'atenció que ens mostren com es relacionen les paraules d'un idioma amb les de l'altre durant una traducció.En aquest cas, parlem d'una traducció de l'alemany a l'anglès. 
+
+En aquesta matriu, les files representen les paraules en anglès (el text de destinació) i les columnes representen les paraules en alemany (el text d'origen). Cada cel·la de la matriu conté un valor que indica la importància de cada paraula alemanya quan es genera una paraula anglesa. L'hem utilitzada ja que pensem que la matriu d'atenció, representada com un mapa de calor (heatmap), proporciona una manera intuïtiva de veure quines parts de la frase d'origen influeixen més en la generació de cada paraula de la frase de destinació.
+
+### Comparació del model inicial vs model final
+Com podem observar en les gràfiques que utilitzem per avaluar el rendiment i qualitat del nostre model, el model inicial presentava bastant overfitting i un bleu que arribava a 0.3. 
+
+Amb el nostre model final conseguim reduir molt l'overfitting que presentava i augmentar el valor del bleu fins a 0.48(fent així que les traduccion siguin molt més precises).
+
+### Comparativa amb diferents idiomes
+Per a fer aquesta prova hem utilitzat tots 2 models entrenats amb 70k frases, el nou idioma que hem provat ha sigut el holandès (dutch) per tant farem la traducció de (holandès a anglès).
 
 ## Contributors
 Enric Canudas 1631674@uab.cat
