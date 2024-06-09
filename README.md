@@ -57,7 +57,10 @@ L'arquitectura GRU és una variant de les RNN, que introdueix mecanismes de comp
 L'arquitectura LSTM és una altra variant de les RNN, dissenyada per a superar els problemes d'esvaïment i explosió del gradient que dificulten l'aprenentatge de dependències a llarg termini en seqüències llargues. Les LSTM incorporen una estructura de memòria més complexa, amb comportes d'entrada, sortida i oblit que permeten retenir informació rellevant durant períodes més llargs de temps. Aquesta capacitat de manejar dependències a llarg termini fa que les LSTM siguin especialment efectives en tasques on les seqüències d'entrada són extenses i contenen dependències de llarga durada.
 
 En els nostres experiments, hem observat que les GRU superen a les LSTM en rendiment. Això es deu al fet que les frases en el nostre conjunt de dades no són prou llargues perquè les capacitats de memòria estesa de les LSTM tinguin un impacte significatiu. Les GRU, sent més simples i eficients, dominen les seqüències de longitud curta a mitjana de manera més efectiva en el nostre cas particular.
-FOTO
+
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/e9c59d82-5ae4-4320-8763-2b50d6371038" width="350" height="225">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/5cf2fb86-7100-44d3-b3f0-1e4e5c9eb914" width="350" height="225">
+
 
 
 ## Hiperparàmetres
