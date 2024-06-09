@@ -135,6 +135,7 @@ Hidden_size és un paràmetre que defineix el nombre d'unitats en les capes ocul
 Un major hidden_size permet a la xarxa capturar més informació i patrons complexos en les seqüències d'entrada, però també incrementa el nombre de paràmetres del model, cosa que pot augmentar el temps d'entrenament i la demanda de memòria. En canvi, un hidden_size massa petit pot resultar en una capacitat insuficient per modelar adequadament les dependències en les dades, mentre que una mida massa gran pot portar a sobreajustament.
 
 Seguidament, fem proves amb 3 tamanys diferents de hidden_size (64, 128 i 256) i com podem veure a la gràfica de train i valid loss quan obtenim menys overfitting és amb una mida de 64, però això és perquè el tamany de les dades és molt petit. Per tant, com a conclusió podem dir que per tamanys de dades petits és millor utilitzar un hidden_size de 64, però per un tamany de dades grans és millor utilitzar el de 256. En conseqüència, per la nostra execució final utilitzarem un hidden_size de 256 perquè el tamany de dades que utilitzarem en aquesta execució serà molt gran. 
+
 <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/e3a9a73d-a129-4d84-8e20-2802e2f7d809" width="350" height="225">
 <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/2ec921eb-fe21-49ee-9bcf-4c92bd3d7db7" width="350" height="225">
 
