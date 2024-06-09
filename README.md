@@ -123,6 +123,9 @@ Amb un dropout de 0.7, passa més bé el contrari, la train i valid loss són ga
 
 Amb un dropout equilibrat (0.5) obtenim unes métriques intermitges entre els dos models anteriors. Aquests resultats ens serviran per execucions posteriors, tenint en compte la quantitat de traduccions que alimenten el model i la seva complexitat, és clar.
 
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/493c1be9-47c6-4328-802f-810b46561f5f" width="350" height="225">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/0cfc1a59-65c7-4a6d-835f-1e96fadcf886" width="350" height="225">
+
 
 ### Learning Rate
 El learning rate és un altre factor a tindre en compte, que determina la rapidesa en la que el model aprendrà els patrons del train set.
