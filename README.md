@@ -27,7 +27,7 @@ Utilitzem un model Seq2Seq basat en RNN. Aquest model consta de dos components p
 
 El nostre decodificador utilitza el mecanisme d'atenció (Attention) que permet al decodificador accedir a tots els estats ocults de l'encodificador. A cada pas del decodificador, es calcula un pes d'atenció per a cada estat ocult de l'encodificador, que determina quanta importància s'ha de donar a cada part de la seqüència d'entrada en predir la següent paraula. La combinació ponderada dels estats ocults d'entrada es converteix en el vector de context dinàmic per al pas de temps actual del decodificador. Els dos tipus de RNN que es solen utilitzar per aquests projectes son LSTM i GRU.
 
-<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91469023/bf73d475-a1c5-4715-b8b7-b81268195d21" width="350" height="225">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91469023/bf73d475-a1c5-4715-b8b7-b81268195d21" width="450" height="250">
 
 Per a crear un model seq2seq eficient i robust, hem dut a terme una anàlisi exhaustiva de diversos factors clau que poden afectar el seu rendiment. Cadascun d'aquests factors ha estat estudiat meticulosament, i hem elaborat gràfics per a entendre-ho millor i permetre’ns prendre decisions informades per optimitzar cada aspecte del disseny i entrenament del model. A continuació, descrivim els principals aspectes considerats:
 
@@ -45,7 +45,9 @@ En canvi, un Random DataLoader barreja aleatòriament les frases abans de carreg
 
 <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/3c933ce4-bb6f-4273-a863-6e3f6fe8a3ea" width="350" height="225">
 <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/6691d191-54fb-4cd0-8848-ffbdecac51f6" width="350" height="225">
-<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/bbbce72f-dc68-4718-ab5a-8c419a506b5d" width="350" height="225">
+<p align="center">
+  <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/bbbce72f-dc68-4718-ab5a-8c419a506b5d" width="350" height="225">
+</p>
 
 
 
@@ -111,7 +113,9 @@ Fem 4 proves amb batch_size diferents, on provem amb 32, 64, 128 i 256. I com po
 
 <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/df7a0472-37ee-4006-9fa9-f1a5770e4ddb" width="350" height="225">
 <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/390228f1-1ffe-4e6d-9a4f-a356029f7331" width="350" height="225">
-<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/639f2f7b-0d8c-4633-b2c8-337d33901470" width="350" height="225">
+<p align="center">
+  <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/639f2f7b-0d8c-4633-b2c8-337d33901470" width="350" height="225">
+</p>
 
 
 ### Dropout
@@ -138,7 +142,9 @@ Per a aquest model i conjunt de dades, la taxa d'aprenentatge de 0.001 ofereix e
 
 <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/747123c1-d5d2-4f76-aa3f-145840513a22" width="350" height="225">
 <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/b0553ee1-2199-4b83-bb5b-a338269cfede" width="350" height="225">
-<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/0310110a-7453-42f2-9207-3a90d8eb3054" width="350" height="225">
+<p align="center">
+  <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/0310110a-7453-42f2-9207-3a90d8eb3054" width="350" height="225">
+</p>
 
 
 ### Hidden_size
@@ -192,8 +198,8 @@ També hem elaborat unes matrius d'atenció que ens mostren com es relacionen le
 
 En aquesta matriu, les files representen les paraules en anglès (el text de destinació) i les columnes representen les paraules en alemany (el text d'origen). Cada cel·la de la matriu conté un valor que indica la importància de cada paraula alemanya quan es genera una paraula anglesa. L'hem utilitzada ja que pensem que la matriu d'atenció, representada com un mapa de calor (heatmap), proporciona una manera intuïtiva de veure quines parts de la frase d'origen influeixen més en la generació de cada paraula de la frase de destinació.
 
-<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/c7046100-5e76-47fc-b9db-7ec2ac367031" width="300" height="200">
-<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/749d1c61-610a-421e-9113-ba6954ab6854" width="300" height="200">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/c7046100-5e76-47fc-b9db-7ec2ac367031" width="250" height="150">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/749d1c61-610a-421e-9113-ba6954ab6854" width="250" height="150">
 
 
 <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/14a2731c-434f-4294-96ea-018219ec6719" width="400" height="250">
