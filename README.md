@@ -27,7 +27,7 @@ Utilitzem un model Seq2Seq basat en RNN. Aquest model consta de dos components p
 
 El nostre decodificador utilitza el mecanisme d'atenció (Attention) que permet al decodificador accedir a tots els estats ocults de l'encodificador. A cada pas del decodificador, es calcula un pes d'atenció per a cada estat ocult de l'encodificador, que determina quanta importància s'ha de donar a cada part de la seqüència d'entrada en predir la següent paraula. La combinació ponderada dels estats ocults d'entrada es converteix en el vector de context dinàmic per al pas de temps actual del decodificador. Els dos tipus de RNN que es solen utilitzar per aquests projectes son LSTM i GRU.
 
-![image](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91469023/bf73d475-a1c5-4715-b8b7-b81268195d21)
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91469023/bf73d475-a1c5-4715-b8b7-b81268195d21" width="350" height="225">
 
 Per a crear un model seq2seq eficient i robust, hem dut a terme una anàlisi exhaustiva de diversos factors clau que poden afectar el seu rendiment. Cadascun d'aquests factors ha estat estudiat meticulosament, i hem elaborat gràfics per a entendre-ho millor i permetre’ns prendre decisions informades per optimitzar cada aspecte del disseny i entrenament del model. A continuació, descrivim els principals aspectes considerats:
 
