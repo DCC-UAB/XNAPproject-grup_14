@@ -20,7 +20,7 @@ Per aquest projecte hem utilitzat el dataset Anki que conté una recopilació de
 
 L'estructura dels datasets és la mateixa per qualsevol idioma, s'organitza per parelles d'oracions. Per cada fila de l'arxiu .txt conté una parella d'oracions amb el text en l'idioma d'origen (majoritàriament anglès) i la seva traducció en l'idioma que hem escollit. Les oracions estan ordenades per la longitud, comença amb oracions d'una paraula i va augmentant la longitud de les oracions.
 
-<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91469023/bcaf3713-d17a-45ea-813a-747438132497" width="500" height="500">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91469023/bcaf3713-d17a-45ea-813a-747438132497" width="700" height="300">
 
 ## Arquitectura
 Utilitzem un model Seq2Seq basat en RNN. Aquest model consta de dos components principals: l'encodificador (encoder) i el decodificador (decoder). L'encodificador processa la seqüència d'entrada (la frase en l'idioma d'origen) i la converteix en un vector de context, que encapsula la informació essencial de tota la seqüència. Aquest vector es passa al decodificador, que genera la seqüència de sortida (la frase en l'idioma de destí) de manera seqüencial. A cada pas de temps, el decodificador utilitza l'estat ocult anterior i la paraula generada anteriorment per predir la següent paraula. Aquest procés continua fins que es produeix un símbol de final de seqüència.
