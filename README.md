@@ -137,6 +137,8 @@ En canvi, un lr més alta (0.01) pot fer que el model aprengui massa ràpid. A l
 Per a aquest model i conjunt de dades, la taxa d'aprenentatge de 0.001 ofereix el millor rendiment, proporcionant una disminució constant i efectiva de la pèrdua de validació.
 
 <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/747123c1-d5d2-4f76-aa3f-145840513a22" width="350" height="225">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/b0553ee1-2199-4b83-bb5b-a338269cfede" width="350" height="225">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/0310110a-7453-42f2-9207-3a90d8eb3054" width="350" height="225">
 
 
 ### Hidden_size
