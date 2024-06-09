@@ -94,7 +94,8 @@ Per tant, podem dir que aquest hiperparàmetre és el que més redueix l'overfit
 
 Finalment, hem decidit que el millor valor pel max_length és 10 on agafem 130.000 parells d'oracions, ja que encara que el temps d'entrenament és una mica elevat, la reducció de l'overfitting que ens proporciona aquest tamany és molt important. També cal dir que si tinguéssim més temps i poguéssim entrenar el model amb el dataset complet (270.000 parells d'oracions) podríem reduir encara molt més el valid loss.
 
-<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/65753d0d-0453-4c6b-9a86-d552b671d3f8" width="500" height="300"> <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/bb202466-447d-41c6-8260-802584260f65" width="400" height="200">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/65753d0d-0453-4c6b-9a86-d552b671d3f8" width="350" height="225">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/bb202466-447d-41c6-8260-802584260f65" width="350" height="225">
 
 ### Batch_size
 La mida del batch_size indica quantes mostres d'entrenament s'utilitzen en cada iteració del procés d'entrenament. Aquest hiperparàmetre es pot ajustar i determina el nombre de mostres processades simultàniament abans d'actualitzar els pesos del model. Una mida de batch_size més gran pot accelerar l'entrenament, mentre que una mida més petita pot proporcionar estimacions de gradient més precises. Per això vam decidir experimentar amb diferents mides per trobar la més adequada.
@@ -145,21 +146,22 @@ S'ha comprovat que pot conduir a una millor convergència durant l'entrenament i
 
 Finalment vam fer una execució llarga amb els hiperparàmetres que millor funcionen per a tamanys de dades més grans. Al augmentar las epochs a 80.
 Els nostres paràmetres finals que utilitzem per a l'última execució són els següents:
-Cell_type = GRU
 
-130K sentences pairs
+__Cell_type__ = GRU
 
-LR = 0,001 
+__130K sentences pairs__
 
-Random dataloader
+__LR__ = 0,001 
 
-Optimizer = Adam 
+__Random dataloader__
 
-Dropout = 0,3
+__Optimizer__ = Adam 
 
-Hidden_size= 256   
+__Dropout__ = 0,3
 
-Batch_size = 64 
+__Hidden_size__ = 256   
+
+__Batch_size__ = 64 
 
 <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/15da6c9f-a367-4d64-8354-775b9b45a888" width="500" height="300">
 <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/76a9a95f-6c8f-401f-9a3f-e0676892d681" width="500" height="300">
@@ -178,7 +180,9 @@ També hem elaborat unes matrius d'atenció que ens mostren com es relacionen le
 En aquesta matriu, les files representen les paraules en anglès (el text de destinació) i les columnes representen les paraules en alemany (el text d'origen). Cada cel·la de la matriu conté un valor que indica la importància de cada paraula alemanya quan es genera una paraula anglesa. L'hem utilitzada ja que pensem que la matriu d'atenció, representada com un mapa de calor (heatmap), proporciona una manera intuïtiva de veure quines parts de la frase d'origen influeixen més en la generació de cada paraula de la frase de destinació.
 
 <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/c7046100-5e76-47fc-b9db-7ec2ac367031" width="300" height="200">
-<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/749d1c61-610a-421e-9113-ba6954ab6854" width="300" height="200">
+<p align="right">
+  <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/749d1c61-610a-421e-9113-ba6954ab6854" width="300" height="200">
+</p>
 
 <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/14a2731c-434f-4294-96ea-018219ec6719" width="400" height="250">
 <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/6287c86e-8fdd-4d8a-806b-f047386d9b76" width="400" height="250">
