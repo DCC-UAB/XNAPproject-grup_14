@@ -163,8 +163,8 @@ __Hidden_size__ = 256
 
 __Batch_size__ = 64 
 
-<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/15da6c9f-a367-4d64-8354-775b9b45a888" width="500" height="300">
-<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/76a9a95f-6c8f-401f-9a3f-e0676892d681" width="500" height="300">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/15da6c9f-a367-4d64-8354-775b9b45a888" width="350" height="225">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/76a9a95f-6c8f-401f-9a3f-e0676892d681" width="350" height="225">
 
 
 Podem observar que el Bleu arriba fins a uns valors de 0.45 (per a una traducció utilitzant la mètrica Bleu estem parlant d'una traducció molt bona).
