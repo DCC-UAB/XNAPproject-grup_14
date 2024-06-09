@@ -193,6 +193,7 @@ En aquesta matriu, les files representen les paraules en anglès (el text de des
 Com podem observar en les gràfiques que utilitzem per avaluar el rendiment i qualitat del nostre model, el model inicial presentava bastant overfitting i un bleu que arribava a 0.3. 
 
 Amb el nostre model final conseguim reduir molt l'overfitting que presentava i augmentar el valor del bleu fins a 0.48(fent així que les traduccion siguin molt més precises).
+
 <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/4792e45c-7e06-4302-aae4-4ab27a7d79d1" width="350" height="225">
 <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/8941839c-7eaf-431f-8534-59bdf50949dd" width="350" height="225">
 
