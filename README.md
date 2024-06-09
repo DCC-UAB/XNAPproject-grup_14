@@ -27,7 +27,7 @@ Utilitzem un model Seq2Seq basat en RNN. Aquest model consta de dos components p
 
 El nostre decodificador utilitza el mecanisme d'atenció (Attention) que permet al decodificador accedir a tots els estats ocults de l'encodificador. A cada pas del decodificador, es calcula un pes d'atenció per a cada estat ocult de l'encodificador, que determina quanta importància s'ha de donar a cada part de la seqüència d'entrada en predir la següent paraula. La combinació ponderada dels estats ocults d'entrada es converteix en el vector de context dinàmic per al pas de temps actual del decodificador. Els dos tipus de RNN que es solen utilitzar per aquests projectes son LSTM i GRU.
 
-<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91469023/bf73d475-a1c5-4715-b8b7-b81268195d21" width="450" height="250">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91469023/bf73d475-a1c5-4715-b8b7-b81268195d21" width="475" height="275">
 
 Per a crear un model seq2seq eficient i robust, hem dut a terme una anàlisi exhaustiva de diversos factors clau que poden afectar el seu rendiment. Cadascun d'aquests factors ha estat estudiat meticulosament, i hem elaborat gràfics per a entendre-ho millor i permetre’ns prendre decisions informades per optimitzar cada aspecte del disseny i entrenament del model. A continuació, descrivim els principals aspectes considerats:
 
@@ -139,10 +139,11 @@ Adagrad (Adaptive Gradient Algorithm) adapta la velocitat d'aprenentatge per a c
 RMSprop (Root Mean Square Propagation) manté una velocitat d'aprenentatge adaptable com Adagrad, però amb un factor de decaïment que controla l'actualització dels paràmetres, ajudant a solucionar el problema de la velocitat d'aprenentatge decreixent.
 
 Després d'avaluar els resultats de cada optimitzador, hem escollit Adam per la seva capacitat de combinar l'eficàcia i la robustesa, oferint el millor rendiment global en les nostres proves.
-Podem comprovar que Adam obté una mètrica Bleu millor.
-
-<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/8ee0e736-237e-4081-9ad8-5a0ffa63f494" width="350" height="225">
-
+Podem comprovar que Adam obté una mètrica Bleu millor, tot i així si treballessim amb una quantitat de dades molt més grans optariem possiblement per Adagrad (ja que té una tendència creixent superior), però pel nostre model optarem per Adam.
+<p align="center">
+  <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/8ee0e736-237e-4081-9ad8-5a0ffa63f494" width="350" height="225">
+</p>
+  
 ### Learning Rate
 El learning rate és un altre factor a tindre en compte, que determina la rapidesa en la que el model aprendrà els patrons del train set.
 
@@ -230,6 +231,8 @@ Amb el nostre model final conseguim reduir molt l'overfitting que presentava i a
 
 ### Comparativa amb diferents idiomes
 Per a fer aquesta prova hem utilitzat tots 2 models entrenats amb 70k frases, el nou idioma que hem provat ha sigut el holandès (dutch) per tant farem la traducció de (holandès a anglès).
+Com l'holandès és una llengua  més simple i més semblant al anglès que no pas l'alemany, els seus vocabularis tenen una longitud més semblant i per tant les traduccions fetes amb aquesta parella d'idiomes són una mica més precises que les de l'alemany.
+
 
 <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/7057c371-58a7-43c2-b5d8-95a076fd7432" width="350" height="225">
 <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/51f018f1-e0d3-4690-8d6d-6291d6b33724" width="350" height="225">
