@@ -43,8 +43,12 @@ Si l'entrenament es realitza en un ordre fix, les frases més simples (curtes) p
 
 En canvi, un Random DataLoader barreja aleatòriament les frases abans de carregar-les, el que fa que el model s'exposi constantment a la variabilitat en la longitud de les frases, la qual cosa pot ajudar a millorar la seva capacitat per a manejar seqüències de diferents longituds durant la inferència. Aquesta simple acció fa que ens trobem millores en el model:
 
-FOTO
-FOTO2
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/3c933ce4-bb6f-4273-a863-6e3f6fe8a3ea" width="350" height="225">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/6691d191-54fb-4cd0-8848-ffbdecac51f6" width="350" height="225">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/bbbce72f-dc68-4718-ab5a-8c419a506b5d" width="350" height="225">
+
+
+
 ## GRU VS LSTM
 Dos de les arquitectures seq2seq més conegudes són les basades en GRU (Gated Recurrent Units) i LSTM (Long Short-Term Memory). 
 
