@@ -73,15 +73,19 @@ __Valid Loss__: El valid loss indica la pèrdua durant la validació, reflectint
 
 El cas base que tenim és el següent:
 
-Learning Rate = 0.01
+__Learning Rate__ = 0.01
 
-Dropout = 0.1
+__Dropout__ = 0.1
 
-Cell type = GRU
+__Cell type__ = GRU
 
-Epochs = 25
+__Epochs__ = 25
 
-Optimizer= Adam
+__Optimizer__ = Adam
+
+__Hidden Size__ = 128
+
+__Batch Size__ = 32
 
 ### Tamany de les dades 
 El primer hiperparàmetre que hem començat a analitzar és el tamany de les dades, en el nostre codi es modifica a través de la variable max_length. Comencem fent diferents proves des de 40.000 parells d'oracions, on el valid loss és gairebé 2, fins a proves amb 130.000 parells d'oracions on arribem a reduir el valid loss per sota d'1. 
@@ -90,16 +94,16 @@ Per tant, podem dir que aquest hiperparàmetre és el que més redueix l'overfit
 
 Finalment, hem decidit que el millor valor pel max_length és 10 on agafem 130.000 parells d'oracions, ja que encara que el temps d'entrenament és una mica elevat, la reducció de l'overfitting que ens proporciona aquest tamany és molt important. També cal dir que si tinguéssim més temps i poguéssim entrenar el model amb el dataset complet (270.000 parells d'oracions) podríem reduir encara molt més el valid loss.
 
-<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/65753d0d-0453-4c6b-9a86-d552b671d3f8" width="500" height="300"> <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/bb202466-447d-41c6-8260-802584260f65" width="500" height="300">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/65753d0d-0453-4c6b-9a86-d552b671d3f8" width="500" height="300"> <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/bb202466-447d-41c6-8260-802584260f65" width="400" height="200">
 
 ### Batch_size
 La mida del batch_size indica quantes mostres d'entrenament s'utilitzen en cada iteració del procés d'entrenament. Aquest hiperparàmetre es pot ajustar i determina el nombre de mostres processades simultàniament abans d'actualitzar els pesos del model. Una mida de batch_size més gran pot accelerar l'entrenament, mentre que una mida més petita pot proporcionar estimacions de gradient més precises. Per això vam decidir experimentar amb diferents mides per trobar la més adequada.
 
 Fem 4 proves amb batch_size diferents, on provem amb 32, 64, 128 i 256. I com podem veure a les gràfiques de valid loss i train loss la millor mida de batch és 64, ja que és on obtenim un loss més petit. També comparem els diferents batch_size pel que fa al bleu i també obtenim que 64 és el millor resultat. Per tant, agafem un batch_size de 64 com a resultat final, ja que tant com en overfitting com en precisió de traducció és el millor resultat obtingut. 
 
-<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/df7a0472-37ee-4006-9fa9-f1a5770e4ddb" width="500" height="300">
-<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/390228f1-1ffe-4e6d-9a4f-a356029f7331" width="500" height="300">
-<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/639f2f7b-0d8c-4633-b2c8-337d33901470" width="500" height="300">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/df7a0472-37ee-4006-9fa9-f1a5770e4ddb" width="350" height="225">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/390228f1-1ffe-4e6d-9a4f-a356029f7331" width="350" height="225">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/639f2f7b-0d8c-4633-b2c8-337d33901470" width="350" height="225">
 
 
 ### Dropout
@@ -130,11 +134,12 @@ Hidden_size és un paràmetre que defineix el nombre d'unitats en les capes ocul
 Un major hidden_size permet a la xarxa capturar més informació i patrons complexos en les seqüències d'entrada, però també incrementa el nombre de paràmetres del model, cosa que pot augmentar el temps d'entrenament i la demanda de memòria. En canvi, un hidden_size massa petit pot resultar en una capacitat insuficient per modelar adequadament les dependències en les dades, mentre que una mida massa gran pot portar a sobreajustament.
 
 Seguidament, fem proves amb 3 tamanys diferents de hidden_size (64, 128 i 256) i com podem veure a la gràfica de train i valid loss quan obtenim menys overfitting és amb una mida de 64, però això és perquè el tamany de les dades és molt petit. Per tant, com a conclusió podem dir que per tamanys de dades petits és millor utilitzar un hidden_size de 64, però per un tamany de dades grans és millor utilitzar el de 256. En conseqüència, per la nostra execució final utilitzarem un hidden_size de 256 perquè el tamany de dades que utilitzarem en aquesta execució serà molt gran. 
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/e3a9a73d-a129-4d84-8e20-2802e2f7d809" width="350" height="225">
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/2ec921eb-fe21-49ee-9bcf-4c92bd3d7db7" width="350" height="225">
 
-![image](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/e3a9a73d-a129-4d84-8e20-2802e2f7d809)
-![image](https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/2ec921eb-fe21-49ee-9bcf-4c92bd3d7db7)
-
-
+### Regularització 
+Utilitzem la regularització L2 amb un weight decay de 1e-5 per al nostre projecte de traducció d'idiomes amb seq2seq RNN per diverses raons. Primer, ens ha  ajudat a prevenir l'overfitting en reduir la complexitat del model. També gràcies a que millora la generalització a noves dades no vistes i estabilitza el procés d'entrenament en evitar actualitzacions de pesos extremadament grans.
+S'ha comprovat que pot conduir a una millor convergència durant l'entrenament i per tant ens ha ajudat per mantenir una bona relació entre bias i variança.
 
 ## Execucions finals
 
