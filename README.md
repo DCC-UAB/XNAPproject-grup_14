@@ -130,6 +130,18 @@ Amb un dropout equilibrat (0.5) obtenim unes métriques intermitges entre els do
 <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/493c1be9-47c6-4328-802f-810b46561f5f" width="350" height="225">
 <img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/91468482/0cfc1a59-65c7-4a6d-835f-1e96fadcf886" width="350" height="225">
 
+### Optimizers
+Hem provat tres tipus d'optimitzadors per al nostre projecte de traducció d'idiomes: Adam, Adagrad i RMSprop. Adam (Adaptive Moment Estimation) combina les millors característiques del RMSprop i el Momentum.
+Utilitza moments adaptatius de primer i segon ordre, fent que l'optimitzador sigui més eficient i robust.
+
+Adagrad (Adaptive Gradient Algorithm) adapta la velocitat d'aprenentatge per a cada paràmetre individualment, augmentant l'eficiència en la gestió de paràmetres escassos. No obstant, tendeix a tenir una velocitat d'aprenentatge decreixent.
+
+RMSprop (Root Mean Square Propagation) manté una velocitat d'aprenentatge adaptable com Adagrad, però amb un factor de decaïment que controla l'actualització dels paràmetres, ajudant a solucionar el problema de la velocitat d'aprenentatge decreixent.
+
+Després d'avaluar els resultats de cada optimitzador, hem escollit Adam per la seva capacitat de combinar l'eficàcia i la robustesa, oferint el millor rendiment global en les nostres proves.
+Podem comprovar que Adam obté una mètrica Bleu millor.
+
+<img src="https://github.com/DCC-UAB/XNAPproject-grup_14/assets/130971223/8ee0e736-237e-4081-9ad8-5a0ffa63f494" width="350" height="225">
 
 ### Learning Rate
 El learning rate és un altre factor a tindre en compte, que determina la rapidesa en la que el model aprendrà els patrons del train set.
